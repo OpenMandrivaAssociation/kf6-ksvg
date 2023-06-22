@@ -22,6 +22,7 @@ BuildRequires: cmake(Qt6Qml)
 BuildRequires: cmake(Qt6Quick)
 BuildRequires: cmake(Qt6GuiTools)
 BuildRequires: cmake(Qt6QuickTest)
+BuildRequires: cmake(Qt6Svg)
 BuildRequires: cmake(Qt6DBusTools)
 BuildRequires: doxygen
 BuildRequires: cmake(Qt6ToolsTools)
