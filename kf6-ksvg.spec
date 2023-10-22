@@ -1,6 +1,6 @@
 %define libname %mklibname KF6Svg
 %define devname %mklibname KF6Svg -d
-%define git 20231014
+%define git 20231023
 
 Name: kf6-ksvg
 Version: 5.240.0
