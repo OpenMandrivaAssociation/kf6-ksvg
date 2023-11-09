@@ -1,11 +1,17 @@
+%define stable %([ "$(echo %{version} |cut -d. -f2)" -ge 80 -o "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
+
 %define libname %mklibname KF6Svg
 %define devname %mklibname KF6Svg -d
-%define git 20231103
+#define git 20231103
 
 Name: kf6-ksvg
-Version: 5.240.0
+Version: 5.245.0
 Release: %{?git:0.%{git}.}1
+%if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/ksvg/-/archive/master/ksvg-master.tar.bz2#/ksvg-%{git}.tar.bz2
+%else
+Source0: https://download.kde.org/%{stable}/frameworks/%{version}/ksvg-%{version}.tar.xz 
+%endif
 Summary: Components for handling SVGs
 URL: https://invent.kde.org/frameworks/ksvg
 License: CC0-1.0 LGPL-2.0+ LGPL-2.1 LGPL-3.0
