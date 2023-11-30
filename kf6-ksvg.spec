@@ -46,9 +46,6 @@ BuildRequires: cmake(PlasmaWaylandProtocols)
 BuildRequires: pkgconfig(wayland-client)
 BuildRequires: pkgconfig(wayland-protocols)
 BuildRequires: pkgconfig(xscrnsaver)
-# Just to make sure we don't pull in the plasma5 version, which conflicts
-# on kguiaddons deps
-BuildRequires: plasma6-xdg-desktop-portal-kde
 Requires: %{libname} = %{EVRD}
 
 %description
