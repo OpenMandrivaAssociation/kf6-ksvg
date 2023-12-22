@@ -37,6 +37,7 @@ BuildRequires: cmake(KF6ColorScheme)
 BuildRequires: cmake(KF6CoreAddons)
 BuildRequires: cmake(KF6GuiAddons)
 BuildRequires: cmake(KF6Kirigami2)
+BuildRequires: gettext
 BuildRequires: doxygen
 BuildRequires: cmake(Qt6ToolsTools)
 BuildRequires: cmake(Qt6)
