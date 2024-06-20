@@ -6,7 +6,7 @@
 #define git 20240217
 
 Name: kf6-ksvg
-Version: 6.3.0
+Version: 6.3.1
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/ksvg/-/archive/master/ksvg-master.tar.bz2#/ksvg-%{git}.tar.bz2
@@ -49,6 +49,9 @@ BuildRequires: pkgconfig(wayland-client)
 BuildRequires: pkgconfig(wayland-protocols)
 BuildRequires: pkgconfig(xscrnsaver)
 Requires: %{libname} = %{EVRD}
+BuildSystem: cmake
+BuildOption: -DBUILD_QCH:BOOL=ON
+BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
 Components for handling SVGs
@@ -70,20 +73,6 @@ Requires: %{libname} = %{EVRD}
 Development files (Headers etc.) for %{name}.
 
 Components for handling SVGs
-
-%prep
-%autosetup -p1 -n ksvg-%{?git:master}%{!?git:%{version}}
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
 
 %files
 %{_datadir}/qlogging-categories6/ksvg.*
